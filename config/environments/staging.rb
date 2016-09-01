@@ -82,12 +82,13 @@ Rails.application.configure do
 
   # Notify team about Exceptions on Slack
   Rails.application.config.middleware.use ExceptionNotification::Rack,
-    :slack => {
-      :webhook_url => "https://hooks.slack.com/services/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",
-      :channel => "#exceptions",
-      :additional_parameters => {
-        :icon_emoji => ":large_blue_circle:", # BLUE CIRCLE icon to distinguish Staging Exceptions in channel
-        :mrkdwn => true
+    slack: {
+      webhook_url: "https://YOUR_SLACK_HOOK_URL",
+      channel: "#exceptions",
+      username: "staging-exception", # ENV based username to distinguish Staging Exceptions in channel
+      additional_parameters: {
+        icon_emoji: ":large_blue_circle:", # BLUE CIRCLE icon to distinguish Staging Exceptions in channel
+        mrkdwn: true
+      }
     }
-  }
 end
