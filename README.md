@@ -22,7 +22,7 @@ gem ‘slack-notifier’
 bundle install
 ```
 
-- Add below code in /config/environments/staging.rb file 
+- Add below code in file */config/environments/staging.rb*
 ```ruby
 config.middleware.use ExceptionNotification::Rack,  
   slack: {
@@ -36,7 +36,7 @@ config.middleware.use ExceptionNotification::Rack,
   }
 ```
 
-- Add below code in /config/environments/production.rb file 
+- Add below code in file */config/environments/production.rb*
 ```ruby
 config.middleware.use ExceptionNotification::Rack,  
   slack: {
